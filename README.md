@@ -14,6 +14,8 @@ Dự án kiểm thử tự động (Automation Testing) cho hệ thống đặt 
 - **Reporting:** TestNG Report & Screenshot capturing on failure
 
 ---
+## 📊 Google Sheet Link
+- **Link:** https://vnshort.com/6tKa
 
 ## 📊 Automation Coverage
 
