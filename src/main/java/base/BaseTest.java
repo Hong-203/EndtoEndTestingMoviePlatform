@@ -4,26 +4,34 @@ import drivers.DriverFactory;
 import drivers.DriverManager;
 import drivers.DriverManagerFactory;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
-    @BeforeTest
+    @BeforeMethod
     public void setup() throws Exception {
+
         System.out.println("Setup executed...");
-        DriverManager driverManager = DriverManagerFactory.getDriverManager("chrome");
+
+        DriverManager driverManager =
+                DriverManagerFactory.getDriverManager("chrome");
+
         driverManager.createDriver();
+
         WebDriver driver = driverManager.getDriver();
+
         DriverFactory.setDriver(driver);
-        driver.manage().window().maximize();
     }
 
-    @AfterTest
+    @AfterMethod
     public void teardown() {
+
         System.out.println("Teardown executed...");
+
         WebDriver driver = DriverFactory.getDriver();
-        if(driver != null) {
+
+        if (driver != null) {
             driver.quit();
         }
     }

@@ -37,7 +37,7 @@ public class Login01_Verify_Login_Successfully extends BaseTest {
 
         //Step 2: Click 'Đăng Nhap' link on the top right
         System.out.println("Step 2: Click 'Đăng Nhap' link on the top right");
-        By byLnkLogin = By.xpath("//a[h3[text()='Đăng Nhập']]");
+        By byLnkLogin = By.linkText("Đăng Nhập");
         WebElement lnkLogin = wait.until(ExpectedConditions.visibilityOfElementLocated(byLnkLogin));
         lnkLogin.click();
 
@@ -58,7 +58,7 @@ public class Login01_Verify_Login_Successfully extends BaseTest {
         Assert.assertEquals(recordedLoginMsg, "Đăng nhập thành công", "Incorrect login message !");
 
         //VP2: Hiện link Đăng xuất
-        By byLnkLogout = By.xpath("//a[h3[text()='Đăng xuất']]");
+        By byLnkLogout = By.xpath("//a[contains(.,'Đăng xuất')]");
         WebElement lnkLogout = wait.until(ExpectedConditions.visibilityOfElementLocated(byLnkLogout));
         Assert.assertTrue(lnkLogout.isDisplayed(), "Logout out link not display !");
 
